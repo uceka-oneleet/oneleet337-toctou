@@ -1,22 +1,17 @@
 name: CI
 
 on:
-  pull_request_target:
-    branches: [main]
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 
-permissions: write-all
+permissions:
+  contents: read
 
 jobs:
-  test:
+  noop:
     runs-on: ubuntu-latest
+    if: false
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - run: npm ci
-      - run: npm test
+      - run: echo "pentest fixture - disabled"
