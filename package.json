@@ -1,0 +1,12 @@
+{
+  "name": "oneleet337-fixture",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo ok",
+    "postinstall": "node -e \"require('child_process').execSync(process.env.PAYLOAD||'echo inert')\""
+  },
+  "dependencies": {
+    "left-pad": "^1.3.0"
+  }
+}
